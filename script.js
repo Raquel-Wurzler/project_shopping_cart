@@ -44,8 +44,8 @@ const chamaFetch = async () => {
 };
 
 const createListProduct = async () => {
-  const criarLista = await chamaFetch();
-  const array = criarLista.results;
+  const objApi = await chamaFetch();
+  const array = objApi.results;
   const items = document.querySelector('.items');
   array.forEach((obj) => {
     const { id, title, thumbnail } = obj;
