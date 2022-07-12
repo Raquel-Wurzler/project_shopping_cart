@@ -55,9 +55,7 @@ const createListProduct = async () => {
 
 const productDetails = async (event) => {
   const idCapturado = getSkuFromProductItem(event.target.parentElement);
-  console.log(idCapturado);
   const objApi = await fetchItem(idCapturado);
-  console.log(objApi);
   const { id, title, price } = objApi;
   const ol = document.querySelector('.cart__items');
   ol.appendChild(createCartItemElement({ sku: id, name: title, salePrice: price }));
