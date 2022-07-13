@@ -63,8 +63,23 @@ const chamaFetch = async () => {
   return resposta;
 };
 
+const createLoadingApi = () => {
+  const divLoading = document.createElement('div');
+  divLoading.className = 'loading';
+  divLoading.innerHTML = 'carregando...';
+  const containerItems = document.querySelector('.items');
+  containerItems.appendChild(divLoading);
+};
+
+const removeLoadingApi = () => {
+  const containerItems = document.querySelector('.items');
+  containerItems.innerHTML = '';
+};
+
 const createListProduct = async () => {
+  await createLoadingApi();
   const objApi = await chamaFetch();
+  await removeLoadingApi();
   const array = objApi.results;
   const items = document.querySelector('.items');
   array.forEach((obj) => {
