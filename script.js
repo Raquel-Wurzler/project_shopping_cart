@@ -101,10 +101,20 @@ const savingInLocalStorage = () => {
   // Adiciono o evento de click em cada item do carrinho
 };
 
+const cleanCart = () => {
+  const cleanButton = document.querySelector('.empty-cart');
+  cleanButton.addEventListener('click', () => {
+  const parentItem = document.querySelector('.cart__items');
+  parentItem.innerHTML = '';
+  localStorage.clear();
+});
+};
+
 window.onload = async () => {
   await createListProduct();
   clickButton();
   savingInLocalStorage();
   await sumProducts();
   await printTotal();
+  cleanCart();
 };
