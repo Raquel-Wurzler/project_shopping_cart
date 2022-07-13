@@ -53,12 +53,14 @@ const createListProduct = async () => {
   });
 };
 
+const ol = document.querySelector('.cart__items');
+
 const productDetails = async (event) => {
   const idCapturado = getSkuFromProductItem(event.target.parentElement);
   const objApi = await fetchItem(idCapturado);
   const { id, title, price } = objApi;
-  const ol = document.querySelector('.cart__items');
   ol.appendChild(createCartItemElement({ sku: id, name: title, salePrice: price }));
+  saveCartItems(ol.innerHTML); // Salva o item que foi adicionado ao carrinho no localStorage
 };
 
 const clickButton = () => {
@@ -68,7 +70,18 @@ const clickButton = () => {
   });
 };
 
+const savingInLocalStorage = () => {
+  if (localStorage.length === 0) {
+    ol.innerHTML = '';
+  }
+  ol.innerHTML = getSavedCartItems(); // Retorna valor salvo no localStorage
+  const liItem = document.querySelectorAll('.cart__item'); // Todos os itens criados na página principam
+  liItem.forEach((li) => li.addEventListener('click', cartItemClickListener));
+  // Adiciono o evento de click em cada item do carrinho
+};
+
 window.onload = async () => {
   await createListProduct();
-  await clickButton();
+  clickButton();
+  savingInLocalStorage();
 };
