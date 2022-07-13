@@ -8,12 +8,12 @@ describe('4 - Teste a função getSavedCartItems', () => {
     expect(typeof(getSavedCartItems)).toBe('function');
   });
 
-  it('Verifica se ao executar a função "getSavedCartItems" o método localStorage.setItem é chamado', () => {
+  it('Verifica se ao executar a função "getSavedCartItems" o método localStorage.getItem é chamado', () => {
     getSavedCartItems();
     expect(localStorage.getItem).toHaveBeenCalledTimes(1);
   });
 
-  it('Verifica se ao executar a função "getSavedCartItems" o método localStorage.setItem é chamado com o parâmetro, "cartItems"', () => {
+  it('Verifica se ao executar a função "getSavedCartItems" o método localStorage.getItem é chamado com o parâmetro, "cartItems"', () => {
     getSavedCartItems();
     expect(localStorage.getItem).toHaveBeenCalledWith('cartItems');
   })
