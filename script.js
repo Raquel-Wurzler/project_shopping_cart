@@ -42,7 +42,7 @@ const sumProducts = async () => {
 const printTotal = async () => {
   const subtotal = document.querySelector('.total-price');
   const valueSum = await sumProducts();
-  subtotal.innerHTML = `R$ ${valueSum}`;
+  subtotal.innerHTML = valueSum;
 };
 
 const cartItemClickListener = (event) => {
