@@ -36,7 +36,7 @@ const sumProducts = async () => {
     pricesProducts.push(valuesNumbers);
   });
   const sumPrices = pricesProducts.reduce((acc, price) => acc + price, 0);
-  return sumPrices;
+  return `R$ ${sumPrices}`;
 };
 
 const printTotal = async () => {
@@ -53,7 +53,9 @@ const cartItemClickListener = (event) => {
 const createCartItemElement = ({ sku, name, salePrice }) => {
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.innerHTML = `<p><strong>SKU:</strong> ${sku}</p>
+  <p><strong>NAME:</strong> ${name}</p>
+  <p><strong>PRICE:</strong> ${salePrice}</p>`;
   li.addEventListener('click', cartItemClickListener);
   return li;
 };
@@ -120,7 +122,9 @@ const cleanCart = () => {
   const cleanButton = document.querySelector('.empty-cart');
   cleanButton.addEventListener('click', () => {
   const parentItem = document.querySelector('.cart__items');
+  const totalPrice = document.querySelector('.total-price');
   parentItem.innerHTML = '';
+  totalPrice.innerHTML = 'R$ 0';
   localStorage.clear();
 });
 };

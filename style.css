@@ -6,12 +6,12 @@
 }
 
 body {
-  background-color: rgb(246, 246, 246);
+  background-color: rgb(225, 236, 255);
 }
 
 .header {
   position: relative;
-  background-color: rgb(3, 52, 45);
+  background-color: rgb(3, 3, 52);
   display: flex;
   align-items: center;
   width: 100%;
@@ -32,7 +32,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: rgb(10, 118, 79);
+  background-color: rgb(10, 95, 118);
   width: 40%;
   height: 100%;
   margin-left: 30px;
@@ -49,7 +49,7 @@ body {
   right: 61.5%;
   width: 39.5%;
   height: 15px;
-  background: rgb(10, 118, 79);
+  background: rgb(10, 95, 118);
   transform: skew(-45deg);
   z-index: 0;
 }
@@ -61,7 +61,7 @@ body {
   right: 61.5%;
   width: 39.5%;
   height: 15px;
-  background: rgb(10, 118, 79);
+  background: rgb(10, 95, 118);
   transform: skew(45deg);
   z-index: 0;
 }
@@ -97,9 +97,11 @@ body {
   height: auto;
   margin: 5px;
   width: 200px;
-  border: 2px solid rgb(234, 234, 233);
+  border: 2px solid rgb(3, 3, 52);
   border-radius: 5px;
   box-sizing: border-box;
+  background-color: white;
+  align-items: center;
 }
 
 .item .item__sku {
@@ -115,16 +117,18 @@ body {
 }
 
 .item .item__image {
-  width: 100%;
+  width: 80%;
 }
 
+
 .item .item__add {
-  background-color: rgb(5, 52, 219);
+  background-color: rgb(3, 3, 52);
   border: 0;
   cursor: pointer;
   margin: 0;
   padding: 10px;
   color: white;
+  width: 100%;
 }
 
 .cart {
@@ -133,21 +137,43 @@ body {
   flex-flow: column wrap;
   background-color: rgb(241, 241, 238);
   height: 100vh;
+  padding: 20px;
+  align-items: center;
 }
 
 .cart .cart__items {
-  height: 500px;
+  height: 450px;
   overflow-y: scroll;
 }
 
+.cart .cart__item {
+  border: 2px solid rgb(3, 3, 52);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  margin: 5px;
+  color: rgb(3, 3, 52);
+}
+
+
 .empty-cart {
-  width: 170px;
-  height: 35px;
-  margin: 0 auto;
+  width: 250px;
+  height: 50px;
+  font-size: 18px;
   border: 2px solid rgb(5, 52, 219);
-  background-color: rgb(249, 249, 246);
+  background-color: rgb(3, 3, 52);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 #container-subtotal {
   display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(3, 3, 52);
+}
+
+.total-price {
+  margin-left: 10px;
 }
