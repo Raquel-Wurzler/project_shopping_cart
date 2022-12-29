@@ -19,8 +19,8 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 
 ### Detalhes desse projeto:
 * Projeto feito com JavaScript, HTML, CSS;
-* As informações referentes aos produtos vem da API do Mercado Livre que disponibiliza informações de vários produtos, pesquisando no endpoint de computador;
-* Nessa aplicação é possível vizualizar detalhes de vários computadores (nome e imagem do produto), adicionar o produto no carrinho de compras, vizualizar cada produto no carrinho de compras e a soma dos valores, esvaziar o carrinho de compras;
+* As informações referentes aos produtos vem da API do Mercado Livre que disponibiliza informações de vários produtos, pesquisando no endpoint de computadores;
+* Nessa aplicação é possível visualizar detalhes de vários computadores (nome e imagem do produto), adicionar o produto no carrinho de compras, visualizar cada produto no carrinho de compras e a soma dos valores, esvaziar o carrinho de compras;
 
 
 ##### Arquivos disponibilizados pela Trybe:
